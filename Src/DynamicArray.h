@@ -143,10 +143,10 @@ namespace ADS
 	template<typename T>
 	inline T* DynamicArray<T>::Copy()
 	{
-		T* NewArr = (T*)malloc(sizeof(T)*Size);
+		T* NewArr = (T*)malloc(sizeof(T)*this->Size);
 
-		for (int i = 0; i < Size; i++)
-			NewArr[i] = arr[i];
+		for (int i = 0; i < this->Size; i++)
+			NewArr[i] = this->arr[i];
 
 		return NewArr;
 	}
