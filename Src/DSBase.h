@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <optional>
 
 #define ExecuteIfBigger(Size,Capacity) if(Capacity <= Size)
 #define RunForSize(Size) for(int i = 0; i < Size; i++)
@@ -32,6 +33,11 @@ public:
 	}
 
 protected:
+	bool CheckSize()
+	{
+		return Size >= Capacity;
+	}
+
 	int Size = 0;
 	int Capacity = 2;
 
