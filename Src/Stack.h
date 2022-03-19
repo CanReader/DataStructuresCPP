@@ -23,7 +23,7 @@ namespace ADS
 		Stack(T InitItem[])
 		{
 			this->arr = InitItem;
-			this->Size = sizeof(InitItem);
+			this->Size = sizeof(InitItem) / sizeof(InitItem[0]);
 			this->Capacity = this->Size * 2;
 		}
 
