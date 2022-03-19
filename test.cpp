@@ -1,7 +1,9 @@
 #include "Src/Stack.h"
 #include "Src/DynamicArray.h"
+#include "Src/Queue.h"
+#include "Src/List.h"
 
-#define OTHERS
+#define LIST
 
 int main()
 {
@@ -28,7 +30,45 @@ int main()
 
 #ifdef  QUEUE
 
+	ADS::Queue<int> IntQueue = ADS::Queue<int>();
+	IntQueue.Enqueue(1);
+	IntQueue.Enqueue(2);
+	IntQueue.Enqueue(3);
+	IntQueue.Enqueue(4);
+	IntQueue.Enqueue(5);
+	int i = IntQueue.Dequeue().value();
+	std::cout << i << std::endl;
+	IntQueue.Dequeue();
+	IntQueue.Dequeue();
+	IntQueue.Dequeue();
+	IntQueue.Dequeue();
+	IntQueue.Enqueue(6);
+	IntQueue.Enqueue(7);
+	IntQueue.Enqueue(8);
+	IntQueue.Print();
+
 #endif //  QUEUE
+
+#ifdef LIST
+
+	int says[5] = {1, 2, 3, 4,5};
+
+	List<int> l = List<int>(says,sizeof(says)/sizeof(says[0]));
+
+	l.Append(32);
+	l.Append(12);
+	l.Append(52);
+	l.Append(72);
+	l.Append(72);
+	l.Pop();
+	l.Pop();
+	l.Remove(4);
+
+	l.Print();
+
+
+#endif // LIST
+
 
 #ifdef BT
 
